@@ -1,0 +1,47 @@
+opciones = ["piedra", "papel", "tijera"]
+puntaje_usuario = 0
+puntaje_computadora = 0
+op = ""
+
+for _ in range(5):
+
+    print("\nElige tu jugada:")
+    print("1. Piedra")
+    print("2. Papel")
+    print("3. Tijera")
+    
+    eleccion_usuario = int(input("Ingrese el número de su elección (1/2/3): ")) - 1
+    
+    
+    if eleccion_usuario == 0:
+        op = "Piedra !"
+    elif eleccion_usuario == 1:
+        op="Papel !"
+    else:
+        op = "Tijera !"
+    
+    
+
+    eleccion_computadora = random.randint(0, 2)
+
+    print("Tú elegiste:", opciones[eleccion_usuario])
+    print("La computadora eligió:", opciones[eleccion_computadora])
+
+    if eleccion_usuario == eleccion_computadora:
+        print("¡Empate en esta jugada!")
+    elif (eleccion_usuario == 0 and eleccion_computadora == 2) or \
+            (eleccion_usuario == 1 and eleccion_computadora == 0) or \
+            (eleccion_usuario == 2 and eleccion_computadora == 1):
+        print("¡Has ganado esta jugada!")
+        puntaje_usuario += 1
+    else:
+        print("¡La computadora ha ganado esta jugada!")
+        puntaje_computadora += 1
+
+print("\nJuego terminado.")
+if puntaje_usuario > puntaje_computadora:
+    print("¡Has ganado el juego con una " + op )
+elif puntaje_usuario < puntaje_computadora:
+    print("¡La computadora ha ganado el juego!")
+else:
+    print("El juego ha terminado en empate.")
