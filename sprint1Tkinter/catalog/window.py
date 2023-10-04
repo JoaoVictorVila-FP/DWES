@@ -5,7 +5,8 @@ from Cell import Cell
 
 class Mainwindow(tk.Tk):
     def on_button_clicked():
-        pass
+       message = "has hecho click en la celda" + Cell.title
+       messagebox.showinfo("Informacion", message)
 
 
     def __init__(self, root):
