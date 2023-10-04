@@ -14,11 +14,11 @@ class Mainwindow(tk.Tk):
         
         self.cells = [
             
-            Cell("Edward Teach","data\edited\BB.jpg"),
-            Cell("Bartholomew Roberts","data\edited\BartholomewRoberts.jpg"),
-            Cell("Captain Morgan","data\edited\CaptainHenryMorgan1-802187d289ec4e2d9bf374fdd6b82160.jpg"),
-            Cell("Benjamin Horningold","data\edited\hornigold_1724_wikimedia.jpg"),
-            Cell("Jack Rackham","data\edited\Rackham,_Jack.jpg")
+            Cell("Edward Teach","data\unedited\BB.webp"),
+            Cell("Bartholomew Roberts","data\unedited\BartholomewRoberts.jpg"),
+            Cell("Captain Morgan","data\unedited\CaptainHenryMorgan1-802187d289ec4e2d9bf374fdd6b82160.jpg"),
+            Cell("Benjamin Horningold","data\unedited\hornigold_1724_wikimedia.jpg"),
+            Cell("Jack Rackham","data\unedited\Rackham,_Jack.jpg")
         ]
         
         for i, cell in enumerate(self.cells):
