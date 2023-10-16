@@ -1,26 +1,32 @@
+
+
+
+[
 {
-"name": "Bartholomew Roberts",
-"description": "Bartholomew Roberts, or Black Bart, was a feared 18th-century pirate captain known for his strategic brilliance, capturing over 400 ships during the Golden Age of Piracy.",
-"image_url": "https://raw.githubusercontent.com/JoaoVictorVila-FP/DWES/main/sprint1Tkinter/catalog/data/edited/BartholomewRoberts.jpg"
-}
+    "name": "Bartholomew Roberts",
+    "description": "Bartholomew Roberts, or Black Bart, was a feared 18th-century pirate captain known for his strategic brilliance, capturing over 400 ships during the Golden Age of Piracy.",
+    "image_url": "https://raw.githubusercontent.com/JoaoVictorVila-FP/DWES/main/sprint1Tkinter/catalog/data/edited/BartholomewRoberts.jpg"
+},
 {
     "name": "Edward Teach",
     "description": "Blackbeard, the infamous pirate of the Golden Age of Piracy, was known for his menacing appearance, with a black beard adorned with slow-burning fuses, and a reputation for ruthless plundering and terrorizing the high seas in the early 18th century.",
     "image_url": "https://raw.githubusercontent.com/JoaoVictorVila-FP/DWES/main/sprint1Tkinter/catalog/data/edited/BB.jpg"
-}
+},
 
 {
     "name": "Captain Morgan",
     "description": "Captain Morgan, a legendary 17th-century privateer turned pirate, is celebrated for his swashbuckling adventures and association with the famous spiced rum brand that bears his name.",
     "image_url": "https://raw.githubusercontent.com/JoaoVictorVila-FP/DWES/main/sprint1Tkinter/catalog/data/edited/CaptainHenryMorgan1-802187d289ec4e2d9bf374fdd6b82160.jpg"
-}
+},
 {
     "name": "Benjamin Horningold",
     "description": "Captain Benjamin Hornigold, an early 18th-century pirate, was notorious for his ever-changing allegiances and later, his pardon-seeking efforts in the Caribbean, a complex figure in pirate history.",
     "image_url": "https://raw.githubusercontent.com/JoaoVictorVila-FP/DWES/main/sprint1Tkinter/catalog/data/edited/hornigold_1724_wikimedia.jpg"
-}
+},
 {
     "name": "Jack Rackham",
     "description": "Calico Jack, aka John Rackham, was an 18th-century pirate known for his distinctive attire, including calico clothing. He sailed with infamous female pirates Anne Bonny and Mary Read.",
     "image_url": "https://raw.githubusercontent.com/JoaoVictorVila-FP/DWES/main/sprint1Tkinter/catalog/data/edited/Rackham%2C_Jack.jpg"
 }
+
+]
