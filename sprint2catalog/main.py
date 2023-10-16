@@ -1,6 +1,7 @@
-import tkinter as tk
-from window import Mainwindow
-#Call Mainwindow
+
+from load import LoadingWindow
+
+
 if __name__ == "__main__":
-    root = Mainwindow()
+    root = LoadingWindow()
     root.mainloop()
