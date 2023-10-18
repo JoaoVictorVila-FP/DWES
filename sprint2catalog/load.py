@@ -6,7 +6,13 @@ import requests
 from MainWindow import Mainwindow
 
 class LoadingWindow:
+    
+    
+    
+    
     def __init__(self,root):
+        self.finished = False
+        self.json_data =[]
         self.root = root
         self.root.title("Cargando....")
         self.root.geometry("170x120")
@@ -25,6 +31,9 @@ class LoadingWindow:
         
         self.thread = threading.Thread(target=self.fetch_json_data)
         self.thread.start()
+        
+        
+        self.check_thread()
         
 
         
@@ -53,19 +62,27 @@ class LoadingWindow:
         
         
     def fetch_json_data(self):
-        response = requests.get("https://github.com/JoaoVictorVila-FP/DWES/blob/main/recursos/catalog.json")
+       
+        response = requests.get("https://raw.githubusercontent.com/JoaoVictorVila-FP/DWES/main/recursos/catalog.json")
         if response.status_code == 200:
-            json_data = response.json()
-            self.root.quit()
-            launch_main_window(json_data)
+            self.json_data = response.json()
+            self.finished = True
+            
+        
+    def check_thread(self):
+        if self.finished:
+            self.root.destroy()
+            launch_main_window(self.json_data)
+        else:
+            self.root.after(100,self.check_thread)
             
             
         
         
 def launch_main_window(json_data):
-    root = tk.Tk()
-    app = Mainwindow(root,json_data)
-    root.mainloop()   
+
+    app = Mainwindow(json_data)
+ 
         
         
         
