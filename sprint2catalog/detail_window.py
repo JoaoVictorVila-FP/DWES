@@ -5,11 +5,18 @@ from PIL import Image, ImageTk
 from Cell import Cell
 from PIL import Image
 
-class DetailWindow(tk.Tk):
+
+
+    
+    
+class DetailWindow:
+        
+        
     def __init__(self, i, t,d):
         
         
         root = tk.Toplevel()
+
         
         print("Initiated detailwindow")
 

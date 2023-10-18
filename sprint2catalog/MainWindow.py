@@ -8,6 +8,8 @@ from Cell import Cell
 
 class Mainwindow(tk.Tk):
     
+
+    
     # Call detail_window
     def on_button_clicked(self, t):
         r = DetailWindow(t.image_tk, t.title, t.desc)
@@ -22,10 +24,10 @@ class Mainwindow(tk.Tk):
         
         
     #Detail window main code
-    def __init__(self, json_data):
-        super().__init__()
+    def __init__(self, root, json_data):
         
-        
+        self.root = root
+
         #create cells
         self.cells = []
         
