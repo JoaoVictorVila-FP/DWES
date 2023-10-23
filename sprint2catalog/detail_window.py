@@ -17,8 +17,12 @@ class DetailWindow:
         
         root = tk.Toplevel()
 
+        x = (root.winfo_screenwidth() - root.winfo_reqwidth())/2
+        y = (root.winfo_screenheight() - root.winfo_reqheight())/2
+        root.geometry(f"+{int(x)}+{int(y)}")
+        root.title("Detailwindow " + t)
         
-        print("Initiated detailwindow")
+        print("Initiated detailwindow " + t)
 
 
 #Create title

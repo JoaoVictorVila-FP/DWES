@@ -15,7 +15,7 @@ class Mainwindow(tk.Tk):
         r = DetailWindow(t.image_tk, t.title, t.desc)
         r.mainloop()
         
-        
+    #Load image into variable
     def load_image_from_url(self, url):
         response = requests.get(url)
         img_data = Image.open(BytesIO(response.content))
@@ -27,11 +27,20 @@ class Mainwindow(tk.Tk):
     def __init__(self, json_data):
         super().__init__()
         
-
+        root = self
+        
+    
         #create cells
         self.cells = []
         
         data = json_data
+    
+        
+          
+        x = (root.winfo_screenwidth() - root.winfo_reqwidth())/2
+        y = (root.winfo_screenheight() - root.winfo_reqheight())/2
+        root.geometry(f"+{int(x)}+{int(y)}")
+        
         
        
         for x in range(len(data)):

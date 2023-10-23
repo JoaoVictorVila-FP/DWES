@@ -15,7 +15,17 @@ class LoadingWindow:
         self.json_data =[]
         self.root = root
         self.root.title("Cargando....")
-        self.root.geometry("170x120")
+        
+        
+        x = (self.root.winfo_screenwidth() - self.root.winfo_reqwidth())/2
+        y = (self.root.winfo_screenheight() - self.root.winfo_reqheight())/2
+        self.root.geometry(f"+{int(x)}+{int(y)}")
+        
+        
+    
+        
+        
+        
         self.root.resizable(False, False)        
         self.label = tk.Label(self.root, text ="Cargando datos....", font =("Arial", 14))
         self.label.pack(side=tk.TOP, pady=10)
@@ -38,7 +48,7 @@ class LoadingWindow:
 
         
         
-        
+     #Draw Circle   
         
     def draw_progress_circle(self, progress):
         self.canvas.delete("progress")
@@ -49,6 +59,7 @@ class LoadingWindow:
                                start=0, extent=angle, tags="progress", outline='green', width=4, style=tk.ARC)
         
         
+    #Update Circle
     def update_progress_circle(self):
         
         if self.progress < 100:
@@ -60,7 +71,8 @@ class LoadingWindow:
         self.draw_progress_circle(self.progress)
         self.root.after(100, self.update_progress_circle)
         
-        
+    
+    #Get the data from the github link
     def fetch_json_data(self):
        
         response = requests.get("https://raw.githubusercontent.com/JoaoVictorVila-FP/DWES/main/recursos/catalog.json")
@@ -68,7 +80,8 @@ class LoadingWindow:
             self.json_data = response.json()
             self.finished = True
             
-        
+    
+    #Launch the mainwindow if possible
     def check_thread(self):
         if self.finished:
             self.root.destroy()
@@ -78,7 +91,7 @@ class LoadingWindow:
             
             
         
-        
+#Launch the main window      
 def launch_main_window(json_data):
 
     app = Mainwindow(json_data)
