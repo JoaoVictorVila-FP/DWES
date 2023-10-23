@@ -1,6 +1,7 @@
 from io import BytesIO
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox
 from PIL import Image,ImageTk
 import requests
 from detail_window import DetailWindow
@@ -21,13 +22,27 @@ class Mainwindow(tk.Tk):
         img_data = Image.open(BytesIO(response.content))
         img = ImageTk.PhotoImage(img_data)
         return img
-        
+
+    
         
     #Detail window main code
     def __init__(self, json_data):
         super().__init__()
         
         root = self
+        
+        
+        
+        #Menu
+        barra_menus = tk.Menu()
+        menu_archivo = tk.Menu(barra_menus, tearoff=False)
+        menu_archivo.add_command(
+            label="Acerca de",
+            command= show_messagebox)
+
+        barra_menus.add_cascade(menu=menu_archivo, label="Archivo")
+        root.config(menu=barra_menus)
+        
         
     
         #create cells
@@ -59,8 +74,12 @@ class Mainwindow(tk.Tk):
             label = ttk.Label(self, image=cell.image_tk, text=cell.title, compound=tk.BOTTOM)
             label.grid(row=i, column=0)
             label.bind("<Button-1>", lambda event, celda=cell: self.on_button_clicked(celda))
+            
+            
+    
+def show_messagebox():
+    messagebox.showinfo("Message", "Escuchas mi musica en www.joaovictorvila.design")    
+    
 
     
     
-
-
