@@ -24,9 +24,9 @@ class Mainwindow(tk.Tk):
         
         
     #Detail window main code
-    def __init__(self, root, json_data):
+    def __init__(self, json_data):
+        super().__init__()
         
-        self.root = root
 
         #create cells
         self.cells = []
