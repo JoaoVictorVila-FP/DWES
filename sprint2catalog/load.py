@@ -82,6 +82,7 @@ class LoadingWindow:
 def launch_main_window(json_data):
 
     app = Mainwindow(json_data)
+    app.mainloop()
  
         
         
