@@ -32,11 +32,6 @@ public class CatalogActivity extends AppCompatActivity {
                 Intent intent = new Intent(CatalogActivity.this, DetailActivity.class);
                 startActivity(intent);
 
-
-
-
-
-
             }
 
 
