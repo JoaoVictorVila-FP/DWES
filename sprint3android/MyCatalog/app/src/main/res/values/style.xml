@@ -9,7 +9,7 @@
 
         </item>
         <item name="cornerSize">
-            30dp
+            100dp
         </item>
 
     </style>
