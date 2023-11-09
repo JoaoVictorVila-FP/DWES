@@ -31,6 +31,8 @@
 
         app:layout_constraintTop_toBottomOf="@+id/TextView1"
 
+        android:src="@drawable/Hermann0000"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
