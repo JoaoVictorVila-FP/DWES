@@ -19,14 +19,14 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     // List of items and other necessary variables
-    private final List<MyItem> cod_list;
+    private final List<MyItem> item_list;
     private final LayoutInflater layoutInflater;
     private final Context context;
 
     // Constructor to initialize the adapter
-    public MyAdapter(List<MyItem> cod_list, Context context) {
+    public MyAdapter(List<MyItem> item_list, Context context) {
         this.layoutInflater = LayoutInflater.from(context);
-        this.cod_list = cod_list;
+        this.item_list = item_list;
         this.context = context;
     }
 
@@ -41,7 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     // Binds data to the views in each item of the RecyclerView
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
-        MyItem MyItem = cod_list.get(position);
+        MyItem MyItem = item_list.get(position);
         holder.title.setText(MyItem.getTitle());
         Glide.with(context).load(MyItem.getUrl()).into(holder.image);
     }
@@ -49,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     // Returns the total number of items in the RecyclerView
     @Override
     public int getItemCount() {
-        return cod_list.size();
+        return item_list.size();
     }
 
     // ViewHolder class to hold references to the views in each item

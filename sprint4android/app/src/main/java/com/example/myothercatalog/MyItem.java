@@ -13,7 +13,7 @@ public class MyItem {
 
         this.title = data.getString("name");
         this.description = data.getString("description");
-        this.url = data.getString("img_url");
+        this.url = data.getString("image_url");
 
     }
     public String getTitle() {
