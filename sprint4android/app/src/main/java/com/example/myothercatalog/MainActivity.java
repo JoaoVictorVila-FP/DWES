@@ -1,6 +1,7 @@
 package com.example.myothercatalog;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -27,7 +28,7 @@ import com.android.volley.toolbox.Volley;
 
 
 // Main activity for the application
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements select_listener {
 
     // RecyclerView instance
     private RecyclerView recyclerView;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
 
                                     // Set up the RecyclerView with the populated data
-                                    MyAdapter myAdapter = new MyAdapter(itemList, MainActivity.this);
+                                    MyAdapter myAdapter = new MyAdapter(itemList, MainActivity.this,MainActivity.this);
                                     recyclerView.setAdapter(myAdapter);
                                     recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
@@ -86,5 +87,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Add the request to the Volley request queue
         Volley.newRequestQueue(this).add(request);
+    }
+
+
+    @Override
+    public void onItemClick(MyItem MyItem) {
+
+        Intent intent = new Intent(MainActivity.this, detail_activity.class);
+        startActivity(intent);
+
     }
 }

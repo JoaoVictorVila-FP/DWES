@@ -22,12 +22,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private final List<MyItem> item_list;
     private final LayoutInflater layoutInflater;
     private final Context context;
+    private final select_listener select_listener;
+
 
     // Constructor to initialize the adapter
-    public MyAdapter(List<MyItem> item_list, Context context) {
+    public MyAdapter(List<MyItem> item_list, Context context, select_listener listener) {
         this.layoutInflater = LayoutInflater.from(context);
         this.item_list = item_list;
         this.context = context;
+        this.select_listener = listener;
     }
 
     // Inflates the layout for each item in the RecyclerView
@@ -44,6 +47,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         MyItem MyItem = item_list.get(position);
         holder.title.setText(MyItem.getTitle());
         Glide.with(context).load(MyItem.getUrl()).into(holder.image);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                select_listener.onItemClick(MyItem);
+            }
+
+        });
     }
 
     // Returns the total number of items in the RecyclerView
@@ -62,7 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.iconImageView);
-            title = itemView.findViewById(R.id.cod_title);
+            title = itemView.findViewById(R.id.title);
         }
     }
 }
