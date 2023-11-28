@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -90,11 +91,24 @@ public class MainActivity extends AppCompatActivity implements select_listener {
     }
 
 
+    // En MainActivity.java
     @Override
-    public void onItemClick(MyItem MyItem) {
+    public void onItemClick(MyItem myItem) {
+        // Crear un nuevo intent para iniciar DetailActivity
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
 
-        Intent intent = new Intent(MainActivity.this, detail_activity.class);
+        // Obtener los datos de myItem
+        String title = myItem.getTitle();
+        String url = myItem.getUrl();
+        String description = myItem.getDescription();
+
+        // Poner los datos extra en el intent utilizando las claves correctas
+        intent.putExtra(DetailActivity.TITLE, title);
+        intent.putExtra(DetailActivity.URL, url);
+        intent.putExtra(DetailActivity.DESCRIPTION, description);
+
+        // Iniciar DetailActivity
         startActivity(intent);
-
     }
+
 }
