@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
                     android:text="Title"
-                    android:textColor="@color/black"
+
                     android:textSize="24sp"
                     />
 

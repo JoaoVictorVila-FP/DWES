@@ -1,0 +1,10 @@
+<resources>
+    <!-- Nuevo Tema Personalizado con Esquema Negro y Blanco -->
+    <style name="MyOtherCatalogTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@android:color/black</item>
+
+    </style>
+</resources>
